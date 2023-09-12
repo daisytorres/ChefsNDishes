@@ -1,0 +1,44 @@
+@model Chef
+
+@{
+    ViewData["Title"] = "New Chef";
+}
+
+
+<div class="container mt-4">
+    <div class="card" style="border: 8px solid #ff1493;">
+        <div class="card-header" style="background-color: #ff69b4; color: white;">
+            <h1 class="display-4">Add a Chef</h1>
+        </div>
+
+
+        <div class="card-body">
+            <form asp-action="CreateChef" asp-controller="Chef" method="POST">
+
+                <div class="mb-3">
+                    <label asp-for="FirstName"> First Name: </label>
+                    <input asp-for="FirstName" class="form-control">
+                    <span asp-validation-for="FirstName" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="LastName"> Last Name: </label>
+                    <input asp-for="LastName" class="form-control">
+                    <span asp-validation-for="LastName" class="text-danger"></span>
+                </div>
+
+
+                <div class="mb-3">
+                    <label asp-for="Birthday">Birthday</label>
+                    <input type="date" asp-for="Birthday" class="form-control">
+                    <span asp-validation-for="Birthday"></span>
+                </div>
+
+
+
+                <button class="btn btn-primary">Add Chef</button>
+
+            </form>
+        </div>
+    </div>
+</div>
